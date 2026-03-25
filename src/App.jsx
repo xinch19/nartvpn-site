@@ -98,7 +98,7 @@
               <article className="card pricing-card pricing-card--featured">
                 <div className="pricing-badge">Популярно</div>
                 <div className="pricing-card__top">
-                  <h3>3 месяца</h3>
+                  <h3>6 месяцев</h3>
                   <div className="price">Оптимальный выбор</div>
                 </div>
                 <ul className="list">
@@ -113,7 +113,7 @@
 
               <article className="card pricing-card">
                 <div className="pricing-card__top">
-                  <h3>6 месяцев</h3>
+                  <h3>12 месяцев</h3>
                   <div className="price">Для долгого использования</div>
                 </div>
                 <ul className="list">
