@@ -1,258 +1,233 @@
-import "./index.css";
-
-const plans = [
-  {
-    name: "1 месяц",
-    price: "150 ₽",
-    subtitle: "Базовый доступ на 30 дней",
-  },
-  {
-    name: "6 месяцев",
-    price: "700 ₽",
-    subtitle: "Выгодный тариф на 180 дней",
-    badge: "Популярный",
-  },
-  {
-    name: "1 год",
-    price: "1290 ₽",
-    subtitle: "Максимальная выгода на 365 дней",
-  },
-];
-
-export default function App() {
+﻿function App() {
   return (
-    <div className="page">
-      <header className="header">
-        <div className="container header-inner">
-          <div>
-            <div className="logo">NartVPN</div>
-            <div className="logo-subtitle">Нæхи VPN.</div>
-          </div>
+    <div className="site">
+      <header className="hero">
+        <div className="container">
+          <div className="hero__content">
+            <span className="badge">NartVPN</span>
+            <h1>Быстрый и удобный VPN через Telegram-бота</h1>
+            <p className="hero__text">
+              Оплачивай подписку, получай конфиг автоматически и подключайся за пару минут.
+              Подходит для телефона, ноутбука и других устройств с AmneziaWG.
+            </p>
 
-          <nav className="nav">
-            <a href="#plans">Тарифы</a>
-            <a href="#service">О сервисе</a>
-            <a href="#how">Как это работает</a>
-            <a href="#offer">Оферта</a>
-            <a href="#contacts">Контакты</a>
-          </nav>
+            <div className="hero__actions">
+              <a className="btn btn--primary" href="https://t.me/nartv_bot" target="_blank" rel="noreferrer">
+                Открыть бота
+              </a>
+              <a className="btn btn--secondary" href="#pricing">
+                Смотреть тарифы
+              </a>
+            </div>
+
+            <div className="hero__stats">
+              <div className="stat">
+                <strong>Автовыдача</strong>
+                <span>Конфиг приходит сразу после оплаты</span>
+              </div>
+              <div className="stat">
+                <strong>Просто</strong>
+                <span>Подключение через Telegram и AmneziaWG</span>
+              </div>
+              <div className="stat">
+                <strong>Поддержка</strong>
+                <span>Управление подпиской и помощь в одном месте</span>
+              </div>
+            </div>
+          </div>
         </div>
       </header>
 
       <main>
-        <section className="hero">
-          <div className="container hero-grid">
-            <div>
-              <div className="pill">Самостоятельный VPN-сервис на базе AmneziaWG</div>
-
-              <h1 className="hero-title">
-                Быстрый доступ к VPN
-                <span> с выдачей конфигов через Telegram</span>
-              </h1>
-
-              <p className="hero-text">
-                NartVPN — это цифровой сервис доступа к VPN. После оплаты пользователь
-                получает доступ к выбранному тарифу и инструкции по подключению через
-                Telegram-бота.
-              </p>
-
-              <div className="hero-actions">
-                <a className="btn btn-primary" href="#plans">
-                  Посмотреть тарифы
-                </a>
-                <a className="btn btn-secondary" href="#contacts">
-                  Связаться
-                </a>
-              </div>
-            </div>
-
-            <div className="hero-cards">
-              <div className="card">
-                <div className="card-label">Что получает пользователь</div>
-                <ul className="feature-list">
-                  <li>Доступ к VPN-сервису на оплаченный срок</li>
-                  <li>Подключение через Telegram-бота</li>
-                  <li>Конфиг и инструкция по подключению</li>
-                  <li>Поддержка по вопросам оплаты и подключения</li>
-                </ul>
-              </div>
-
-              <div className="card card-soft">
-                <div className="card-label">Важно</div>
-                <p>
-                  Сервис предоставляет цифровую услугу удалённого доступа. Окончательные
-                  условия использования, возврата и обслуживания указаны в публичной
-                  оферте ниже на странице.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="plans" className="section">
-          <div className="container">
-            <div className="section-top">
-              <div className="section-label">Тарифы</div>
-              <h2>Стоимость доступа</h2>
-            </div>
-
-            <div className="plans-grid">
-              {plans.map((plan) => (
-                <div key={plan.name} className="plan-card">
-                  {plan.badge && <div className="badge">{plan.badge}</div>}
-
-                  <div className="plan-label">Тариф</div>
-                  <div className="plan-name">{plan.name}</div>
-                  <div className="plan-price">{plan.price}</div>
-                  <div className="plan-subtitle">{plan.subtitle}</div>
-
-                  <p className="plan-text">
-                    В стоимость входит доступ к цифровому VPN-сервису на указанный период.
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="service" className="section">
-          <div className="container two-columns">
-            <div className="card large-card">
-              <div className="section-label">Описание услуги</div>
-              <h2>Что представляет собой сервис</h2>
-              <p>
-                NartVPN предоставляет пользователю платный цифровой доступ к VPN-сервису
-                на определённый срок. После оформления заказа пользователь получает доступ
-                к подключению и инструкции по использованию через Telegram-бота и/или
-                личную ссылку оплаты.
-              </p>
-              <p>
-                Услуга не является материальным товаром и предоставляется в цифровом
-                формате. Сервис предназначен для личного использования в рамках условий
-                публичной оферты.
-              </p>
-            </div>
-
-            <div id="how" className="card large-card">
-              <div className="section-label">Как это работает</div>
-              <h2>Порядок получения доступа</h2>
-              <ol className="steps-list">
-                <li>Пользователь выбирает тариф и оформляет заказ.</li>
-                <li>После оплаты заказ подтверждается платёжной системой.</li>
-                <li>Пользователь получает доступ к подключению и инструкции.</li>
-                <li>Доступ действует в течение оплаченного периода.</li>
-              </ol>
-            </div>
-          </div>
-        </section>
-
-        <section id="offer" className="section">
-          <div className="container">
-            <div className="card offer-card">
-              <div className="section-label">Публичная оферта</div>
-              <h2>Краткие условия оказания услуги</h2>
-
-              <div className="offer-list">
-                <div>
-                  <h3>1. Предмет оферты</h3>
-                  <p>
-                    Исполнитель предоставляет пользователю платный доступ к цифровому
-                    VPN-сервису на выбранный срок согласно действующим тарифам,
-                    размещённым на сайте.
-                  </p>
-                </div>
-
-                <div>
-                  <h3>2. Порядок оплаты</h3>
-                  <p>
-                    Оплата производится в безналичном порядке через подключённые платёжные
-                    инструменты. Обязательства по предоставлению доступа считаются
-                    принятыми к исполнению после подтверждения оплаты.
-                  </p>
-                </div>
-
-                <div>
-                  <h3>3. Порядок оказания услуги</h3>
-                  <p>
-                    После подтверждения оплаты пользователю предоставляется цифровой
-                    доступ к сервису и/или данные для подключения. Срок действия услуги
-                    зависит от выбранного тарифа.
-                  </p>
-                </div>
-
-                <div>
-                  <h3>4. Возвраты</h3>
-                  <p>
-                    Возврат денежных средств рассматривается в индивидуальном порядке в
-                    случаях технической невозможности предоставить доступ или при иных
-                    основаниях, предусмотренных законодательством и условиями сервиса.
-                  </p>
-                </div>
-
-                <div>
-                  <h3>5. Ограничение ответственности</h3>
-                  <p>
-                    Исполнитель не несёт ответственности за невозможность использования
-                    сервиса по причинам, не зависящим от него, включая ограничения со
-                    стороны сторонних платформ, провайдеров связи, устройств пользователя
-                    и иных внешних факторов.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section className="section">
-          <div className="container two-columns">
-            <div className="card large-card">
-              <div className="section-label">Политика обработки данных</div>
-              <h2>Краткая политика конфиденциальности</h2>
-              <p>
-                Для оформления заказа и оказания услуги сервис может обрабатывать
-                минимально необходимый объём данных: контактные данные, данные заказа,
-                сведения об оплате и техническую информацию, необходимую для
-                предоставления доступа и поддержки.
-              </p>
-              <p>
-                Данные используются исключительно для исполнения заказа, поддержки
-                пользователей, ведения расчётов и соблюдения требований законодательства.
-              </p>
+          <div className="container">
+            <div className="section__head">
+              <span className="section__eyebrow">Преимущества</span>
+              <h2>Почему удобно пользоваться NartVPN</h2>
             </div>
 
-            <div id="contacts" className="card large-card">
-              <div className="section-label">Контакты</div>
-              <h2>Контактная информация</h2>
+            <div className="grid grid--3">
+              <article className="card">
+                <h3>Быстрый старт</h3>
+                <p>
+                  Не нужно вручную искать настройки. После оплаты бот сам отправляет готовый конфиг.
+                </p>
+              </article>
 
-              <div className="contacts-list">
+              <article className="card">
+                <h3>Простое управление</h3>
                 <p>
-                  <strong>ФИО:</strong> Khinchagov Arsen Vyacheslavovhich
+                  Подписка, продление и выдача конфигурации происходят через Telegram-бота.
                 </p>
+              </article>
+
+              <article className="card">
+                <h3>Автоматизация</h3>
                 <p>
-                  <strong>Email:</strong> nartvpn@hotmail.com
+                  Доступ активируется автоматически, а после окончания срока подписки отключается без ручной работы.
                 </p>
-                <p>
-                  <strong>Telegram:</strong> @nartv_bot
-                </p>
-                <p>
-                  <strong>Режим поддержки:</strong> ежедневно, 10:00–22:00
-                </p>
-                <p>
-                  <strong>ИНН / реквизиты:</strong>151211393621
-                </p>
-    
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section className="section section--alt" id="pricing">
+          <div className="container">
+            <div className="section__head">
+              <span className="section__eyebrow">Тарифы</span>
+              <h2>Выбери подходящую подписку</h2>
+              <p>Актуальная оплата и получение доступа происходят в Telegram-боте.</p>
+            </div>
+
+            <div className="grid grid--3">
+              <article className="card pricing-card">
+                <div className="pricing-card__top">
+                  <h3>1 месяц</h3>
+                  <div className="price">Базовый тариф</div>
+                </div>
+                <ul className="list">
+                  <li>Подходит для первого знакомства</li>
+                  <li>Быстрое подключение</li>
+                  <li>Автоматическая выдача конфига</li>
+                </ul>
+                <a className="btn btn--primary btn--full" href="https://t.me/nartv_bot" target="_blank" rel="noreferrer">
+                  Купить в боте
+                </a>
+              </article>
+
+              <article className="card pricing-card pricing-card--featured">
+                <div className="pricing-badge">Популярно</div>
+                <div className="pricing-card__top">
+                  <h3>3 месяца</h3>
+                  <div className="price">Оптимальный выбор</div>
+                </div>
+                <ul className="list">
+                  <li>Удобно для постоянного использования</li>
+                  <li>Меньше продлений</li>
+                  <li>Те же быстрые настройки</li>
+                </ul>
+                <a className="btn btn--primary btn--full" href="https://t.me/nartv_bot" target="_blank" rel="noreferrer">
+                  Купить в боте
+                </a>
+              </article>
+
+              <article className="card pricing-card">
+                <div className="pricing-card__top">
+                  <h3>6 месяцев</h3>
+                  <div className="price">Для долгого использования</div>
+                </div>
+                <ul className="list">
+                  <li>Подходит для тех, кто пользуется постоянно</li>
+                  <li>Минимум лишних действий</li>
+                  <li>Поддержка через Telegram</li>
+                </ul>
+                <a className="btn btn--primary btn--full" href="https://t.me/nartv_bot" target="_blank" rel="noreferrer">
+                  Купить в боте
+                </a>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section className="section" id="how-it-works">
+          <div className="container">
+            <div className="section__head">
+              <span className="section__eyebrow">Как это работает</span>
+              <h2>Подключение в 3 шага</h2>
+            </div>
+
+            <div className="steps">
+              <div className="step">
+                <div className="step__num">1</div>
+                <h3>Открой бота</h3>
+                <p>Перейди в Telegram-бот NartVPN и выбери нужный тариф.</p>
               </div>
+
+              <div className="step">
+                <div className="step__num">2</div>
+                <h3>Оплати подписку</h3>
+                <p>После успешной оплаты доступ активируется автоматически.</p>
+              </div>
+
+              <div className="step">
+                <div className="step__num">3</div>
+                <h3>Импортируй конфиг</h3>
+                <p>Бот отправит готовый файл, который нужно импортировать в AmneziaWG.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section section--alt" id="faq">
+          <div className="container">
+            <div className="section__head">
+              <span className="section__eyebrow">FAQ</span>
+              <h2>Частые вопросы</h2>
+            </div>
+
+            <div className="faq">
+              <article className="faq__item">
+                <h3>Где происходит покупка?</h3>
+                <p>Покупка и выдача доступа происходят через Telegram-бота.</p>
+              </article>
+
+              <article className="faq__item">
+                <h3>Как подключиться после оплаты?</h3>
+                <p>После оплаты бот отправляет конфиг, который нужно импортировать в приложение AmneziaWG.</p>
+              </article>
+
+              <article className="faq__item">
+                <h3>Можно ли получить конфиг повторно?</h3>
+                <p>Да, этот функционал можно добавить в боте, чтобы пользователь получал конфиг повторно.</p>
+              </article>
+
+              <article className="faq__item">
+                <h3>Что будет после окончания подписки?</h3>
+                <p>Доступ к VPN отключается автоматически, после чего можно оформить новую подписку.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section className="section cta">
+          <div className="container">
+            <div className="cta__box">
+              <div>
+                <span className="section__eyebrow">Готов начать?</span>
+                <h2>Открой бота и получи доступ к VPN</h2>
+                <p>Весь процесс — от оплаты до выдачи конфига — происходит автоматически.</p>
+              </div>
+
+              <a className="btn btn--primary" href="https://t.me/nartv_bot" target="_blank" rel="noreferrer">
+                Перейти в Telegram-бота
+              </a>
             </div>
           </div>
         </section>
       </main>
 
       <footer className="footer">
-        <div className="container footer-inner">
-          <div>© 2026 NartVPN. Все права защищены.</div>
-          <div>Цифровой сервис доступа к VPN</div>
+        <div className="container footer__inner">
+          <div>
+            <strong>NartVPN</strong>
+            <p>VPN-сервис с управлением через Telegram.</p>
+          </div>
+
+          <div className="footer__links">
+            <a href="/terms.html" target="_blank" rel="noreferrer">
+              Пользовательское соглашение
+            </a>
+            <a href="/privacy.html" target="_blank" rel="noreferrer">
+              Политика конфиденциальности
+            </a>
+            <a href="https://t.me/nartv_bot" target="_blank" rel="noreferrer">
+              Telegram-бот
+            </a>
+          </div>
         </div>
       </footer>
     </div>
-  );
+  )
 }
+
+export default App
